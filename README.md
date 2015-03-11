@@ -8,3 +8,5 @@ Input = one csv file with the raw data of all subjects ran in experiments each d
   Each column are variables wanting to be extracted into a separate csv for plotting. 
   
 Output = multiple csv files, each file represents one variable and its trend for each subject over days of training.
+
+Note: scripts very inflexible: Need to manually specify number of animals trained, and how many days trained.
