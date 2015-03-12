@@ -18,7 +18,7 @@ names(right)<-names.evaluations
 names.evaluations<-c("AnimalID","ScheduleRunDate",1:59) #51 stimuli presented plus 8 columns for regular cue data.
 names(regular.cues)<-names.evaluations
 
-#normalize dates.
+#Order data by date and normalize date format.
 stimulus$AnimalID<-toupper(stimulus$AnimalID)
 stimulus<-stimulus[order(stimulus$AnimalID,strptime(stimulus$ScheduleRunDate,format="%m/%d/%Y %I:%M:%S %p")),]
 
