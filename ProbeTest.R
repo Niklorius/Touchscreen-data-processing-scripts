@@ -9,13 +9,13 @@ right<-read.csv("Probe Right Touch Latency.csv", header = TRUE, sep = ",", quote
 regular.cues<-read.csv("Probe VMCL data.csv", header = TRUE, sep = ",", quote="\"", dec=".", na.strings=c("-"))
 
 #normalize column names.
-names.evaluations<-c("AnimalID","ScheduleRunDate",1:51)
+names.evaluations<-c("AnimalID","ScheduleRunDate",1:51) #51 denotes 51 stimuli presented
 names(stimulus)<-names.evaluations
 names(touch.lat)<-names.evaluations
 names(left)<-names.evaluations
 names(right)<-names.evaluations
 
-names.evaluations<-c("AnimalID","ScheduleRunDate",1:59)
+names.evaluations<-c("AnimalID","ScheduleRunDate",1:59) #51 stimuli presented plus 8 columns for regular cue data.
 names(regular.cues)<-names.evaluations
 
 #normalize dates.
