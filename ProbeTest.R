@@ -1,14 +1,14 @@
 ####### Working directory where .csv file is located ############
 setwd("D:/Documents/Josselyn Lab/Touchscreen/NOPQR/Probe day 1")
 
-
+#load variables.
 stimulus<-read.csv("Probe Index.csv", header = TRUE, sep = ",", quote="\"", dec=".", na.strings=c("-"))
 touch.lat<-read.csv("Probe Sample Touch Latency.csv", header = TRUE, sep = ",", quote="\"", dec=".", na.strings=c("-"))
 left<-read.csv("Probe Left Touch Latency.csv", header = TRUE, sep = ",", quote="\"", dec=".", na.strings=c("-"))
 right<-read.csv("Probe Right Touch Latency.csv", header = TRUE, sep = ",", quote="\"", dec=".", na.strings=c("-"))
 regular.cues<-read.csv("Probe VMCL data.csv", header = TRUE, sep = ",", quote="\"", dec=".", na.strings=c("-"))
 
-###################
+#normalize column names.
 names.evaluations<-c("AnimalID","ScheduleRunDate",1:51)
 names(stimulus)<-names.evaluations
 names(touch.lat)<-names.evaluations
@@ -18,6 +18,7 @@ names(right)<-names.evaluations
 names.evaluations<-c("AnimalID","ScheduleRunDate",1:59)
 names(regular.cues)<-names.evaluations
 
+#normalize dates.
 stimulus$AnimalID<-toupper(stimulus$AnimalID)
 stimulus<-stimulus[order(stimulus$AnimalID,strptime(stimulus$ScheduleRunDate,format="%m/%d/%Y %I:%M:%S %p")),]
 
